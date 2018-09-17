@@ -54,3 +54,5 @@ class branch:
             count -= 1
           
 branch(300,0,0)
+tur.pu()
+tur.goto(0,-400)
