@@ -54,6 +54,7 @@ while True:
     tur.speed(0)
     tur.pencolor("cyan")
     tur.bgcolor("black")
+    tur.fillcolor("cyan")
     tur.begin_fill()
     line(-length,length*math.sqrt(3), length,length*math.sqrt(3))
     line(length,length*math.sqrt(3), length*2,0)
