@@ -1,17 +1,7 @@
 import turtle as tur
 import math
 import time
-def colour(count):
-    if count < 2:
-        tur.color("red")
-    elif count < 4:
-        tur.color("orange")
-    elif count < 6:
-        tur.color("yellow")
-    elif count < 8:
-        tur.color("green")
-    else:
-        tur.color("blue")
+
 def rotate(origin, point, angle):
     ox = origin[0]
     oy = origin[1]
@@ -23,7 +13,6 @@ def rotate(origin, point, angle):
     return qx, qy
 tur.radians()
 tur.speed(0)
-tur.pensize(2)
   
 def line(startx,starty, endx,endy):
     fullx = endx-startx
@@ -49,20 +38,17 @@ def line(startx,starty, endx,endy):
     line(Cx,Cy, endx,endy)
     
 while True:
-    length = 200
+    length = 140
     tur.ht()
     tur.speed(0)
     tur.pencolor("cyan")
     tur.bgcolor("black")
-    tur.fillcolor("cyan")
-    tur.begin_fill()
     line(-length,length*math.sqrt(3), length,length*math.sqrt(3))
     line(length,length*math.sqrt(3), length*2,0)
     line(length*2,0, length,-length*math.sqrt(3))
     line(length,-length*math.sqrt(3), -length,-length*math.sqrt(3))
     line(-length,-length*math.sqrt(3), -length*2,0)
     line(-length*2,0, -length,length*math.sqrt(3))
-    tur.end_fill()
     time.sleep(10)
     tur.reset()
 
