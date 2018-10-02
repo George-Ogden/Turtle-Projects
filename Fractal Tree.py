@@ -1,5 +1,6 @@
 import turtle as tur
 import math
+import time
 def colour(count):
     if count < 2:
         tur.color("red")
@@ -21,12 +22,8 @@ def rotate(origin, point, angle):
     qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
     return [qx, qy]
 tur.radians()
-tur.speed(100)
+tur.speed(0)
 tur.pensize(2)
-tur.pu()
-tur.goto(0,-400)
-tur.pd()
-tur.goto(0,-200)
 def line(x,y,x1,y1,x2,y2,angle):
   tur.pu()
   tur.goto(x+x1,y+y1)
@@ -52,7 +49,14 @@ class branch:
             count += 1
             branch(self.length,self.angle-(math.pi/4),count)
             count -= 1
-          
-branch(300,0,0)
-tur.pu()
-tur.goto(0,-400)
+tur.ht()
+tur.bgcolor("black")
+while True:
+    tur.color("white")
+    tur.pu()
+    tur.goto(0,-400)
+    tur.pd()
+    tur.goto(0,-200)
+    branch(300,0,0)
+    time.sleep(10)
+    tur.clear()

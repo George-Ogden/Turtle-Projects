@@ -1,9 +1,14 @@
 from turtle import *
-speed(10)
-color(input("pick a colour: "))
+import time
+speed(0)
+ht()
+color("yellow")
 pensize(1)
-backward(250)
+backward(300)
+bgcolor("black")
 while True:
-    forward(500)
-    left(179)
-    
+    for i in range(360):    
+        forward(600)
+        left(179)
+    time.sleep(10)
+    clear()

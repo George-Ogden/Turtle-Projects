@@ -1,8 +1,9 @@
 import turtle as tur
+import time
 class Fibonacci:
-    def __init__(self,max_size):
+    def __init__(self,max_width):
         self.list = [0,1]
-        while self.list[len(self.list)-1] < max_size:
+        while self.list[len(self.list)-1] < max_width:
             self.i = self.list[len(self.list)-1] + self.list[len(self.list)-2]
             self.list.append(self.i)
     def main(self,x=0,y=0,square_colour="blue",arc_colour="red"):
@@ -15,6 +16,8 @@ class Fibonacci:
         tur.seth(270)
         tur.color(colour)
         tur.pd()
+        tur.width(3)
+        tur.speed(5)
         for i in self.list:
             for j in range(5):
                 tur.forward(i)
@@ -27,9 +30,16 @@ class Fibonacci:
         tur.seth(90)
         tur.color(colour)
         tur.pd()
+        tur.width(2)
+        tur.speed(1)
         for i in self.list:
             tur.circle(-i,90)
 x = -232
 y = -143
-fibonacci = Fibonacci(500).main(x,y)
+while True:
+    tur.bgcolor("black")
+    tur.ht()
+    fibonacci = Fibonacci(500).main(x,y)
+    time.sleep(10)
+    tur.reset()
 #fibonacci.arc(x,y)
