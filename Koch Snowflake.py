@@ -11,8 +11,6 @@ def rotate(origin, point, angle):
     qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
     qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
     return qx, qy
-tur.radians()
-tur.speed(0)
   
 def line(startx,starty, endx,endy):
     fullx = endx-startx
@@ -36,9 +34,9 @@ def line(startx,starty, endx,endy):
     line(Ax,Ay, Bx,By)
     line(Bx,By, Cx,Cy)
     line(Cx,Cy, endx,endy)
-    
+
+length = 140
 while True:
-    length = 140
     tur.ht()
     tur.speed(0)
     tur.pencolor("cyan")
