@@ -11,7 +11,9 @@ while True:
     turtle.right(90)
     for x in range(16):
         turtle.right(45)
-        if x%2==0:
+        if x == 0:
+            turtle.color("white","black")
+        elif x%2==0:
             turtle.color("black")
         else:
             turtle.color("white")

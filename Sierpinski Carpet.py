@@ -1,5 +1,4 @@
 import turtle as tur
-import math
 import time
   
 def square(centre,length):
