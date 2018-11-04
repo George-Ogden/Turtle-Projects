@@ -6,13 +6,12 @@ class Fibonacci:
         while self.list[len(self.list)-1] < max_width:
             self.i = self.list[len(self.list)-1] + self.list[len(self.list)-2]
             self.list.append(self.i)
-    def main(self,x=0,y=0,square_colour="blue",arc_colour="red"):
+    def main(self,x,y,square_colour,arc_colour):
         self.square(square_colour,x,y)
         self.arc(arc_colour,x,y)
-    def square(self,colour,x=0,y=0):
+    def square(self,colour,x,y):
         tur.pu()
-        tur.setx(x)
-        tur.sety(y)
+        tur.goto(x,y)
         tur.seth(270)
         tur.color(colour)
         tur.pd()
@@ -23,10 +22,9 @@ class Fibonacci:
                 tur.forward(i)
                 tur.right(90)
             tur.forward(i)
-    def arc(self,colour,x=0,y=0):
+    def arc(self,colour,x,y):
         tur.pu()
-        tur.setx(x)
-        tur.sety(y)
+        tur.goto(x,y)
         tur.seth(90)
         tur.color(colour)
         tur.pd()
@@ -39,7 +37,6 @@ y = -143
 while True:
     tur.bgcolor("black")
     tur.ht()
-    fibonacci = Fibonacci(500).main(x,y)
+    fibonacci = Fibonacci(500).main(x,y,"blue","red")
     time.sleep(10)
     tur.reset()
-#fibonacci.arc(x,y)

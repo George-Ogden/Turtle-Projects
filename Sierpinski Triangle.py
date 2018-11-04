@@ -1,8 +1,6 @@
 import turtle as tur
-import math
-import time
+import math, time
 
-rt3 = math.sqrt(3)/2
 def triangle(top,length,i=False):
     tx,ty = top[0],top[1]
     if length < 8:
@@ -11,7 +9,7 @@ def triangle(top,length,i=False):
     if i:        
         tur.goto(tx,ty)
         tur.color("white")
-        tur.pendown()
+        tur.pd()
         tur.begin_fill()
         for i in range(3):
             tur.forward(length)
@@ -28,13 +26,13 @@ def triangle(top,length,i=False):
     triangle([tx+(length/4),ty-(length*rt3/2)],length/2)
 
 length = 380
-y = (length*rt3)
+rt3 = math.sqrt(3)/2
 x = length/2
+y = (length*rt3)
 while True:
     tur.ht()
     tur.seth(-60)
     tur.speed(0)
-    tur.color("white")
     tur.bgcolor("black")
     triangle([0,y],length,True)
     triangle([-x,0],length,True)

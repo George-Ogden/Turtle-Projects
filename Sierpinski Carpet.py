@@ -9,10 +9,10 @@ def square(centre,length):
         return
     Ax = cx - half_length
     Ay = cy + half_length
-    tur.penup()
+    tur.pu()
     tur.goto(Ax,Ay)
     tur.begin_fill()
-    tur.pendown()
+    tur.pd()
     for i in range(4):
         tur.forward(length)
         tur.right(90)
@@ -27,14 +27,12 @@ def square(centre,length):
     square([cx+length,cy+length],length)
     square([cx,cy],length)
 
-length = 140
 while True:
     tur.ht()
-    tur.speed(0)
     tur.speed(0)
     tur.color("white")
     tur.bgcolor("black")
     square([0,0],648)
-    time.sleep(100)
+    time.sleep(10)
     tur.reset()
 

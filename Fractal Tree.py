@@ -1,54 +1,48 @@
 import turtle as tur
-import math
-import time
-def colour(count):
-    if count < 2:
-        tur.color("red")
-    elif count < 4:
-        tur.color("orange")
-    elif count < 6:
-        tur.color("yellow")
-    elif count < 8:
-        tur.color("green")
-    else:
+import math, time
+def colour(i):
+    colours = ["red","orange","yellow","green"]
+    try:
+        tur.color(colours[i//2])
+    except:
         tur.color("blue")
-def rotate(origin, point, angle):
-    ox = origin[0]
-    oy = origin[1]
-    px = point[0]
-    py = point[1]
 
-    qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
-    qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
+def rotate(origin, point, angle):
+    qx = origin[0] + math.cos(angle) * (point[0] - origin[0]) - math.sin(angle) * (point[1] - origin[1])
+    qy = origin[1] + math.sin(angle) * (point[0] - origin[0]) + math.cos(angle) * (point[1] - origin[1])
     return [qx, qy]
-tur.radians()
-tur.speed(0)
-tur.pensize(2)
+
 def line(x,y,x1,y1,x2,y2,angle):
   tur.pu()
   tur.goto(x+x1,y+y1)
   point = rotate([x1,y1],[x2,y2], angle)
   tur.pd()
   tur.goto(x+point[0],y+point[1])
+
 class branch:
     def __init__(self,length,angle,count):
-        self.length = length * 2 / 3
-        self.angle = angle
-        self.x = tur.xcor()
-        self.y = tur.ycor()
-        if self.length > 4:
+        self.len = length * 2 / 3
+        self.ang = angle
+        x = tur.xcor()
+        y = tur.ycor()
+        if self.len > 4:
             colour(count)
-            line(self.x,self.y,0,0,0,self.length,self.angle+(math.pi/4))
+            line(x,y,0,0,0,self.len,self.ang+(pi/4))
             count += 1
-            branch(self.length,self.angle+(math.pi/4),count)
+            branch(self.len,self.ang+(pi/4),count)
             count -= 1
             tur.pu()
-            tur.goto(self.x,self.y)
+            tur.goto(x,y)
             colour(count)
-            line(self.x,self.y,0,0,0,self.length,self.angle-(math.pi/4))
+            line(x,y,0,0,0,self.len,self.ang-(pi/4))
             count += 1
-            branch(self.length,self.angle-(math.pi/4),count)
+            branch(self.len,self.ang-(pi/4),count)
             count -= 1
+
+pi = math.pi
+tur.radians()
+tur.speed(0)
+tur.pensize(2)
 tur.ht()
 tur.bgcolor("black")
 while True:

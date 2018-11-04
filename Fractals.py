@@ -1,53 +1,27 @@
-#Fractals along a line
-import time
-import math
-import turtle
+import turtle as tur
+import time, math
 def line(startx,starty, endx,endy):
-    fullx = endx-startx
-    fully = endy-starty
+    fullx,fully = endx-startx,endy-starty
     distance = math.sqrt(fully**2+fullx**2)
-    if distance < 6:
-        turtle.penup()
-        turtle.goto(startx,starty)
-        turtle.pendown()
-        turtle.goto(endx,endy)
+    if distance < 5:
+        tur.pu()
+        tur.goto(startx,starty)
+        tur.pd()
+        tur.goto(endx,endy)
         return
-    halfx = fullx/ 2
-    halfy = fully/2
-    Ax = halfx+startx
-    Ay = halfy+starty
-    rotatex = Ax-(1/2*(endy-Ay))
-    rotatey = 1/2*(endx-Ax)+Ay
-    Bx = rotatex
-    By = rotatey
+    halfx,halfy = fullx/2,fully/2
+    Ax,Ay = halfx+startx,halfy+starty
+    Bx,By = Ax-(1/2*(endy-Ay)),1/2*(endx-Ax)+Ay
     line(startx,starty, Ax,Ay)
     line(Ax,Ay, Bx,By)
     line(Bx,By, Ax,Ay)
     line(Ax,Ay, endx,endy)
 
-#line(-240,0,-120,200)
-#line(-120,200,120,200)
-#line(120,200,240,0)
-#line(240,0,120,-200)
-#line(120,-200,-120,-200)
-#line(-120,-200,-240,0)
-##line(-240,0,0,0)
-##line(240,0,0,0)
-##line(-120,200,0,0)
-##line(120,-200,0,0)
-##line(-120,-200,0,0)
-##line(120,200,0,0)
-##line(0,0,240,0)
-##line(0,0,-240,0)
-##line(0,0,120,-200)
-##line(0,0,-120,200)
-##line(0,0,-120,-200)
-##line(0,0,120,200)
+tur.ht()
+tur.speed(0)
+tur.color("aqua")
+tur.bgcolor("black")
 while True:
-    turtle.ht()
-    turtle.speed(0)
-    turtle.pencolor("aqua")
-    turtle.bgcolor("black")
-    line(-600,-300,600,-300)
+    line(-600,-200,600,-200)
     time.sleep(10)
-    turtle.reset()
+    tur.clear()
