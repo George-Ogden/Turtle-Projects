@@ -1,7 +1,8 @@
 import turtle as tur
 import time, math
 def line(startx,starty, endx,endy):
-    fullx,fully = endx-startx,endy-starty
+    fullx = endx-startx
+    fully = endy-starty
     distance = math.sqrt(fully**2+fullx**2)
     if distance < 5:
         tur.pu()
@@ -21,6 +22,7 @@ tur.ht()
 tur.speed(0)
 tur.color("aqua")
 tur.bgcolor("black")
+tur.pu()
 while True:
     line(-600,-200,600,-200)
     time.sleep(10)
