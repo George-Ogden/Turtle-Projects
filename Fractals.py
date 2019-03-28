@@ -1,35 +1,32 @@
-#Fractals along a line
-import time
-import math
-import turtle
+import turtle as tur
+import time, math
 def line(startx,starty, endx,endy):
     fullx = endx-startx
     fully = endy-starty
     distance = math.sqrt(fully**2+fullx**2)
-    if distance < 6:
-        turtle.penup()
-        turtle.goto(startx,starty)
-        turtle.pendown()
-        turtle.goto(endx,endy)
+    if distance < 5:
+        tur.pu()
+        tur.goto(startx,starty)
+        tur.pd()
+        tur.goto(endx,endy)
         return
-    halfx = fullx/ 2
-    halfy = fully/2
+    halfx = fullx/2
+	halfy = fully/2
     Ax = halfx+startx
-    Ay = halfy+starty
-    rotatex = Ax-(1/2*(halfy))
-    rotatey = 1/2*(halfx)+Ay
-    Bx = rotatex
-    By = rotatey
+	Ay = halfy+starty
+    Bx = Ax-1/2*(endy-Ay)
+	By = 1/2*(endx-Ax)+Ay
     line(startx,starty, Ax,Ay)
     line(Ax,Ay, Bx,By)
     line(Bx,By, Ax,Ay)
     line(Ax,Ay, endx,endy)
 
+tur.ht()
+tur.speed(0)
+tur.color("aqua")
+tur.bgcolor("black")
+tur.pu()
 while True:
-    turtle.ht()
-    turtle.speed(0)
-    turtle.pencolor("aqua")
-    turtle.bgcolor("black")
-    line(-600,-300,600,-300)
+    line(-600,-200,600,-200)
     time.sleep(10)
-    turtle.reset()
+    tur.clear()
