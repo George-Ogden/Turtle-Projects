@@ -11,11 +11,11 @@ def line(startx,starty, endx,endy):
         tur.goto(endx,endy)
         return
     halfx = fullx/2
-	halfy = fully/2
+    halfy = fully/2
     Ax = halfx+startx
-	Ay = halfy+starty
+    Ay = halfy+starty
     Bx = Ax-1/2*(endy-Ay)
-	By = 1/2*(endx-Ax)+Ay
+    By = Ay+1/2*(endx-Ax)
     line(startx,starty, Ax,Ay)
     line(Ax,Ay, Bx,By)
     line(Bx,By, Ax,Ay)
