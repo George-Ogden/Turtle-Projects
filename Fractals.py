@@ -12,8 +12,8 @@ def line(startx,starty, endx,endy):
         return
     halfx = fullx/2
     halfy = fully/2
-    Ax = halfx+startx
-    Ay = halfy+starty
+    Ax = startx+halfx
+    Ay = starty+halfy
     Bx = Ax-1/2*(endy-Ay)
     By = Ay+1/2*(endx-Ax)
     line(startx,starty, Ax,Ay)
