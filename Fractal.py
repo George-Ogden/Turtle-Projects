@@ -19,9 +19,9 @@ def line(startx,starty, endx,endy):
     Cx = endx-thirdx
     Cy = endy-thirdy
     Bx = Ax-thirdy
-    By = thirdx+Ay
+    By = Ay+thirdx
     Dx = Cx+thirdy
-    Dy = -thirdx+Cy
+    Dy = Cy-thirdx
     line(startx,starty, Ax,Ay)
     line(Ax,Ay, Bx,By)
     line(Ax,Ay, Cx,Cy)
