@@ -1,4 +1,3 @@
-#Fractals along a line
 import time
 import math
 import turtle
