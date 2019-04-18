@@ -5,7 +5,7 @@ colour = ["red","yellow","blue","green","purple","dark green","navy blue","pink"
 ht()
 speed(0)
 while True:
-    for i in range(720):
+    for i in range(640):
         pensize(1+i/50)
         color(colour[i%(len(colour)-1)])
         forward(50+i)
