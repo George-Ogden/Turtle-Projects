@@ -1,6 +1,8 @@
 import turtle as tur
 import time
-tur.bgcolor('black')
+def hex_col(color):
+    return "#" + "".join([str("0"+x[x.find("x")+1:])[-2:] for x in list(map(hex,color))])
+tur.bgcolor("black")
 tur.speed(0)
 tur.ht()
 while True:
@@ -8,7 +10,7 @@ while True:
         color = [0,0,0]
         color[(i//120+1)%3] = int((i%120)/8*17)
         color[(i//120)%3] = int(255-(i%120)/8*17)
-        color = '#' + ''.join([str('0'+x[x.find('x')+1:])[-2:] for x in list(map(hex,color))])
+        color = hex_col(color)
         tur.color(color)
         tur.seth(i/2)
         tur.circle(250)

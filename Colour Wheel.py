@@ -2,12 +2,12 @@ import turtle as tur
 import math
 import time
 def hex_col(color):
-    return '#' + ''.join([str('0'+x[x.find('x')+1:])[-2:] for x in list(map(hex,color))])
+    return "#" + "".join([str("0"+x[x.find("x")+1:])[-2:] for x in list(map(hex,color))])
 def get_col_ang(x,y):
     try:
         theta = math.atan(x/y) * 360 / math.pi
     except:
-        theta = 180
+     
     finally:
         return theta
 def get_col(theta):
@@ -28,7 +28,7 @@ def circle(angle,radius,pos=(0,0)):
         tur.circle(radius,1)
 
 while True:
-    tur.bgcolor('black')
+    tur.bgcolor("black")
     tur.speed(0)
     tur.ht()
     for i in range(0,720,5):
