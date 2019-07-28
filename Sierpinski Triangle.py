@@ -27,15 +27,11 @@ def triangle(top,length,i=False):
 
 length = 380
 rt3 = math.sqrt(3)/2
-x = length/2
-y = (length*rt3)
 while True:
     tur.ht()
+    tur.bgcolor("black")
     tur.seth(-60)
     tur.speed(0)
-    tur.bgcolor("black")
-    triangle([0,y],length,True)
-    triangle([-x,0],length,True)
-    triangle([x,0],length,True)
+    triangle([0,length*rt3],length*2,True)
     time.sleep(10)
     tur.reset()
