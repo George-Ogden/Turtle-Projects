@@ -28,19 +28,15 @@ def line(startx,starty, endx,endy):
     line(Bx,By, Cx,Cy)
     line(Cx,Cy, endx,endy)
 
-length = 140
-rt3 = math.sqrt(3)
+length = 400
 while True:
     tur.ht()
     tur.speed(0)
     tur.color("cyan")
     tur.bgcolor("black")
-    line(-length,length*rt3, length,length*rt3)
-    line(length,length*rt3, length*2,0)
-    line(length*2,0, length,-length*rt3)
-    line(length,-length*rt3, -length,-length*rt3)
-    line(-length,-length*rt3, -length*2,0)
-    line(-length*2,0, -length,length*rt3)
+    line(-length,length/2, length,length/2)
+    line(length,length/2, 0,-length)
+    line(0,-length, -length,length/2)
     time.sleep(10)
     tur.reset()
 
