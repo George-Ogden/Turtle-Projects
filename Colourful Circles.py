@@ -20,7 +20,7 @@ def circle(angle,radius,pos=(0,0)):
     tur.goto(*pos)
     tur.pd()
     tur.seth(angle)
-    for i in range(0,360,1):
+    for i in range(360):
         tur.color(get_col(get_col_ang(*tur.pos())))
         tur.circle(radius,1)
 def major_circle(radius):
@@ -40,6 +40,8 @@ while True:
     tur.ht()
     for i in range(3):
         major_circle(i*200)
+    circle(90,100,(100,0))
+    circle(90,300,(300,0))
     circle(90,500,(500,0))
     time.sleep(10)
     tur.reset()
