@@ -1,3 +1,5 @@
+# https://youtu.be/RGStj_7DqqM
+
 import turtle as tur
 import time
 def hex_col(color):

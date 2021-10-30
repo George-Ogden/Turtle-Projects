@@ -1,3 +1,5 @@
+# https://youtu.be/x3-MtfG8UkM
+
 from turtle import *
 import time
 color('orange')
@@ -12,4 +14,3 @@ while True:
         left(1)
     time.sleep(10)
     clear()
-        

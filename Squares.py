@@ -1,3 +1,5 @@
+# https://youtu.be/jRk9JKZ2WEE
+
 import turtle
 import math
 import time
@@ -12,9 +14,9 @@ while True:
     for x in range(16):
         turtle.right(45)
         turtle.pd()
-        if x==0:
-            turtle.color("white","black")
-        elif x%2==0:
+        if x == 0:
+            turtle.color("white", "black")
+        elif x % 2 == 0:
             turtle.color("black")
         else:
             turtle.color("white")
@@ -27,6 +29,5 @@ while True:
         turtle.forward(i/2)
         i = math.sqrt(2*i*i)/2
     time.sleep(10)
-    turtle.goto(0,0)
+    turtle.goto(0, 0)
     turtle.clear()
-    
